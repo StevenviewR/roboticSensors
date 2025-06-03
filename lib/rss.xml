@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MyPKM]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>MyPKM</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 29 May 2025 06:06:16 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 29 May 2025 06:06:14 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Troubleshooting]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MyPKM]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>MyPKM</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 03 Jun 2025 00:40:30 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 03 Jun 2025 00:40:28 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Troubleshooting]]></title><description><![CDATA[ 
  <br>
 <br>The Webots crash after opening or running python scripts.
 <br>Reason : Python 3 is not installed properly. 
@@ -398,7 +398,72 @@ gyro.enable(timestep)
  <br>
 <br>Download the installer from <a rel="noopener nofollow" class="external-link" href="https://cyberbotics.com/" target="_blank">https://cyberbotics.com/</a>
 <br>Reference:<br>
-Michel, O. (2004). Webots: Professional mobile robot simulation. International Journal of Advanced Robotic Systems, 1(1), 39–42. <a rel="noopener nofollow" class="external-link" href="https://doi.org/10.5772/5692" target="_blank">https://doi.org/10.5772/5692</a>]]></description><link>Webots_Sensors\Webots Installation.html</link><guid isPermaLink="false">Webots_Sensors/Webots Installation.md</guid><pubDate>Wed, 07 May 2025 04:09:21 GMT</pubDate></item><item><title><![CDATA[Combine two datasets with different Categories]]></title><description><![CDATA[ 
+Michel, O. (2004). Webots: Professional mobile robot simulation. International Journal of Advanced Robotic Systems, 1(1), 39–42. <a rel="noopener nofollow" class="external-link" href="https://doi.org/10.5772/5692" target="_blank">https://doi.org/10.5772/5692</a>]]></description><link>Webots_Sensors\Webots Installation.html</link><guid isPermaLink="false">Webots_Sensors/Webots Installation.md</guid><pubDate>Wed, 07 May 2025 04:09:21 GMT</pubDate></item><item><title><![CDATA[Merger two Datasets]]></title><description><![CDATA[ 
+ <br>import json
+
+# Load both datasets
+with open("label_studio_format.json", "r") as f1:
+    data1 = json.load(f1)
+
+with open("label_studio_format_2.json", "r") as f2:
+    data2 = json.load(f2)
+
+# Merge the lists
+merged_data = data1 + data2
+
+# Extract all unique labels
+all_labels = set()
+for task in merged_data:
+    for annotation in task.get("annotations", []):
+        for result in annotation.get("result", []):
+            labels = result.get("value", {}).get("rectanglelabels", [])
+            all_labels.update(labels)
+
+# Save merged data
+with open("merged_label_studio.json", "w") as f:
+    json.dump(merged_data, f, indent=2)
+
+# Save the distinct categories
+sorted_labels = sorted(all_labels)
+with open("categories.json", "w") as f:
+    json.dump(sorted_labels, f, indent=2)
+
+# Create Label Studio Interface XML
+color_palette = [
+    "orange",
+    "blue",
+    "red",
+    "green",
+    "purple",
+    "pink",
+    "gray",
+    "brown",
+    "cyan",
+    "yellow",
+]
+
+xml_lines = [
+    "&lt;View&gt;",
+    '  &lt;Image name="image" value="$image" zoom="true"/&gt;',
+    '  &lt;RectangleLabels name="label" toName="image"&gt;',
+]
+
+for i, label in enumerate(sorted_labels):
+    color = color_palette[i % len(color_palette)]
+    xml_lines.append(f'    &lt;Label value="{label}" background="{color}"/&gt;')
+
+xml_lines += ["  &lt;/RectangleLabels&gt;", "&lt;/View&gt;"]
+
+# Save the XML
+interface_xml = "\n".join(xml_lines)
+with open("label_studio_interface.xml", "w") as f:
+    f.write(interface_xml)
+
+print("✅ Merged file saved as 'merged_label_studio.json'")
+print("✅ Categories saved as 'categories.json'")
+print("✅ Label Studio interface XML saved as 'label_studio_interface.xml'")
+
+]]></description><link>YOLO_LabelStudio\Convert_RobotFlow_To_LabelStudio and merger\Merger two Datasets.html</link><guid isPermaLink="false">YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.md</guid><pubDate>Wed, 28 May 2025 08:42:41 GMT</pubDate></item><item><title><![CDATA[Combine two datasets with different Categories]]></title><description><![CDATA[ 
  <br>
 <br>
 download another dataset from here, <a rel="noopener nofollow" class="external-link" href="https://universe.roboflow.com/snowman1908/plastic-recyclable-detection/dataset/2" target="_blank">https://universe.roboflow.com/snowman1908/plastic-recyclable-detection/dataset/2</a>
