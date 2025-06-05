@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MyPKM]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>MyPKM</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 05 Jun 2025 03:50:48 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 05 Jun 2025 03:50:45 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Learning Objectives]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MyPKM]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>MyPKM</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 05 Jun 2025 04:00:33 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 05 Jun 2025 04:00:30 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Learning Objectives]]></title><description><![CDATA[ 
  <br><br>
 <br>Explain the concept of sensor fusion algorithm in robotics applications.
 <br>Apply the complementary filter algorithm to fuse compass sensor and wheel encoder data for heading control of a mobile robot.
@@ -642,7 +642,77 @@ gyro.enable(timestep)
  <br>
 <br>Download the installer from <a rel="noopener nofollow" class="external-link" href="https://cyberbotics.com/" target="_blank">https://cyberbotics.com/</a>
 <br>Reference:<br>
-Michel, O. (2004). Webots: Professional mobile robot simulation. International Journal of Advanced Robotic Systems, 1(1), 39–42. <a rel="noopener nofollow" class="external-link" href="https://doi.org/10.5772/5692" target="_blank">https://doi.org/10.5772/5692</a>]]></description><link>Webots_Sensors\Webots Installation.html</link><guid isPermaLink="false">Webots_Sensors/Webots Installation.md</guid><pubDate>Wed, 07 May 2025 04:09:21 GMT</pubDate></item><item><title><![CDATA[Merger two Datasets]]></title><description><![CDATA[ 
+Michel, O. (2004). Webots: Professional mobile robot simulation. International Journal of Advanced Robotic Systems, 1(1), 39–42. <a rel="noopener nofollow" class="external-link" href="https://doi.org/10.5772/5692" target="_blank">https://doi.org/10.5772/5692</a>]]></description><link>Webots_Sensors\Webots Installation.html</link><guid isPermaLink="false">Webots_Sensors/Webots Installation.md</guid><pubDate>Wed, 07 May 2025 04:09:21 GMT</pubDate></item><item><title><![CDATA[Convert to Label Studio from RobotFlow]]></title><description><![CDATA[ 
+ <br>import json
+import os
+
+# Load your Roboflow COCO JSON file
+with open("_annotations.coco.json") as f:
+    coco = json.load(f)
+
+# Build category lookup
+categories = {cat["id"]: cat["name"] for cat in coco["categories"]}
+
+# Build image lookup
+images = {img["id"]: img for img in coco["images"]}
+
+# Optional: define your image path prefix for Label Studio to locate the images
+IMAGE_PATH_PREFIX = "/data/local-files/?d=train/"
+
+# Collect annotations per image
+annotations_by_image = {}
+for ann in coco.get("annotations", []):
+    img_id = ann["image_id"]
+    bbox = ann["bbox"]  # [x, y, width, height]
+    category_id = ann["category_id"]
+
+    image = images[img_id]
+    width = image["width"]
+    height = image["height"]
+
+    # Normalize coordinates for Label Studio
+    x = bbox[0] / width * 100
+    y = bbox[1] / height * 100
+    w = bbox[2] / width * 100
+    h = bbox[3] / height * 100
+
+    result = {
+        "from_name": "label",
+        "to_name": "image",
+        "type": "rectanglelabels",
+        "value": {
+            "x": x,
+            "y": y,
+            "width": w,
+            "height": h,
+            "rectanglelabels": [categories[category_id]],
+        },
+    }
+
+    if img_id not in annotations_by_image:
+        annotations_by_image[img_id] = []
+
+    annotations_by_image[img_id].append(result)
+
+# Convert to Label Studio format
+label_studio_data = []
+for img_id, image in images.items():
+    entry = {
+        "data": {"image": IMAGE_PATH_PREFIX + image["file_name"]},
+        "annotations": [{"result": annotations_by_image.get(img_id, [])}],
+    }
+    label_studio_data.append(entry)
+
+# Save to file
+with open("label_studio_format.json", "w") as f:
+    json.dump(label_studio_data, f, indent=2)
+
+print("Conversion complete. Output saved to label_studio_format.json.")
+print("Categories:")
+for cat_id, cat_name in categories.items():
+    print(f"{cat_id}: {cat_name}")
+
+]]></description><link>YOLO_LabelStudio\Convert_RobotFlow_To_LabelStudio and merger\Convert to Label Studio from RobotFlow.html</link><guid isPermaLink="false">YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.md</guid><pubDate>Wed, 28 May 2025 08:41:45 GMT</pubDate></item><item><title><![CDATA[Merger two Datasets]]></title><description><![CDATA[ 
  <br>import json
 
 # Load both datasets
