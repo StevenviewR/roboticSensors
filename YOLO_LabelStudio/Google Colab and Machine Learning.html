@@ -172,14 +172,14 @@ print(glob.glob('runs/detect/*/weights/*'))
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="change the train folder number!!!!" dir="auto" class="heading" id="change_the_train_folder_number!!!!"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>change the train folder number!!!!</h3><div class="heading-children"><div class="el-pre"><pre><code data-line="0">from google.colab import drive  
 drive.mount('/content/drive')
 
-!cp -r runs/detect/train* /content/drive/MyDrive/
+!cp -r runs/detect/train* /content/drive/MyDrive/Yolo_results
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Test your model (images)" dir="auto" class="heading" id="Test_your_model_(images)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Test your model (images)</h2><div class="heading-children"><div class="el-pre"><pre><code data-line="0">from ultralytics import YOLO
 
 # Load the trained model from Google Drive
-model = YOLO('/content/drive/My Drive/train/weights/best.pt')
+model = YOLO('/content/drive/My Drive/Yolo_results/train/weights/best.pt')
 
 # Define save path on Google Drive
-save_path = '/content/drive/My Drive/YOLO_results/20250701'
+save_path = '/content/drive/My Drive/Yolo_results/YOLO_predict/20250701'
 
 # Run prediction and save results to the specified folder
 results = model.predict(
@@ -200,7 +200,7 @@ for r in results:
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-pre"><pre><code data-line="0">from ultralytics import YOLO
 
 # Load trained model
-model = YOLO('/content/drive/My Drive/train/weights/best.pt')
+model = YOLO('/content/drive/My Drive/Yolo_results/train/weights/best.pt')
 
 # Predict on a video and save results to Google Drive
 results = model.predict(
@@ -210,7 +210,7 @@ results = model.predict(
     conf=0.4,                       # Confidence threshold
     stream=False,                   # Process the full video
     vid_stride=4,                   # Process every 4th frame
-    project='/content/drive/My Drive/results',  # Output directory in Google Drive
+    project='/content/drive/My Drive/Yolo_results/video_results',  # Output directory in Google Drive
     name='predict',                 # Subfolder name inside project
     exist_ok=True                   # Overwrite existing folder if present
 )
