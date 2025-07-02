@@ -197,14 +197,15 @@ for r in results:
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Test your Model (Video)" dir="auto" class="heading" id="Test_your_Model_(Video)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Test your Model (Video)</h2><div class="heading-children"><div class="el-ul"><ul>
 <li data-line="0" dir="auto">downsize the video</li>
 </ul></div><div class="el-pre"><pre><code data-line="0">!ffmpeg -i "/content/drive/My Drive/Drone_images_videos/20250701/DJI_0466.MP4" -vf "scale=640:360" "/content/drive/My Drive/Drone_images_videos/20250701/small_video.mp4"
-</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-pre"><pre><code data-line="0">import re
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-pre"><pre><code data-line="0">import os
+import re
 import cv2
 import folium
 import csv
 from datetime import datetime, timedelta
 from ultralytics import YOLO
 
-# --- STEP 1: Parse SRT file for GPS ---
+# --- Parse SRT with GPS ---
 def parse_srt_with_gps(srt_path):
     gps_data = []
     with open(srt_path, 'r') as f:
@@ -236,9 +237,11 @@ def parse_block(lines):
         lon_match = re.search(r"\[longitude:\s*([-+]?[0-9]*\.?[0-9]+)\]", gps_text)
         if not lat_match or not lon_match:
             return None
-        lat = float(lat_match.group(1))
-        lon = float(lon_match.group(1))
-        return {"timestamp": start_time, "lat": lat, "lon": lon}
+        return {
+            "timestamp": start_time,
+            "lat": float(lat_match.group(1)),
+            "lon": float(lon_match.group(1))
+        }
     except Exception as e:
         print(f"⚠️ Failed to parse block: {lines}\nError: {e}")
         return None
@@ -247,26 +250,25 @@ def parse_timestamp(ts):
     t = datetime.strptime(ts, "%H:%M:%S,%f")
     return timedelta(hours=t.hour, minutes=t.minute, seconds=t.second, microseconds=t.microsecond)
 
-# --- STEP 2: Run YOLO object detection and extract timestamps ---
-def run_yolo_detection(video_path, model_path, fps):
+# --- Run YOLO object detection ---
+def run_yolo_detection(video_path, model_path, fps, save_dir):
     model = YOLO(model_path)
     class_names = model.names
 
     results = model.predict(
-        source=video_path,                # &lt;- pass full video path!
+        source=video_path,
         conf=0.4,
         save=True,
         save_txt=True,
         stream=False,
         vid_stride=4,
-        project="/content/drive/My Drive/Yolo_results/garbage_detection/video_results",
+        project=save_dir,
         name="predict",
         exist_ok=True
     )
 
     detections = []
     frame_idx = 0
-
     for r in results:
         timestamp = timedelta(seconds=frame_idx / fps)
         for box in r.boxes.data:
@@ -282,15 +284,12 @@ def run_yolo_detection(video_path, model_path, fps):
 
     return detections
 
-
-# --- STEP 3: Match detection time with nearest GPS ---
+# --- Match timestamp to GPS ---
 def find_nearest_gps(ts, gps_data):
-    if not gps_data:
-        raise ValueError("No GPS data available.")
     return min(gps_data, key=lambda g: abs(g['timestamp'] - ts))
 
-# --- STEP 4: Save detections to CSV ---
-def save_to_csv(detections, filename="/content/drive/MyDrive/Yolo_results/garbage_detection/video_results/detections_with_gps.csv"):
+# --- Save CSV ---
+def save_to_csv(detections, filename):
     with open(filename, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=["timestamp", "class_id", "class_name", "lat", "lon"])
         writer.writeheader()
@@ -298,8 +297,8 @@ def save_to_csv(detections, filename="/content/drive/MyDrive/Yolo_results/garbag
             writer.writerow(d)
     print(f"✅ CSV saved: {filename}")
 
-# --- STEP 5: Plot detections on map ---
-def plot_on_map(detections, output_file="/content/drive/MyDrive/Yolo_results/garbage_detection/video_results/detections_map.html"):
+# --- Plot map ---
+def plot_on_map(detections, output_file):
     if not detections:
         print("⚠️ No detections to plot.")
         return
@@ -312,43 +311,58 @@ def plot_on_map(detections, output_file="/content/drive/MyDrive/Yolo_results/gar
     m.save(output_file)
     print(f"✅ Map saved: {output_file}")
 
-# === MAIN ===
+# --- Main Batch Processor ---
+def process_videos_in_folder(video_folder, model_path, output_folder):
+    os.makedirs(output_folder, exist_ok=True)
+    video_files = [f for f in os.listdir(video_folder) if f.lower().endswith(".mp4")]
+
+    for video_file in video_files:
+        base_name = os.path.splitext(video_file)[0]
+        video_path = os.path.join(video_folder, video_file)
+        srt_path = os.path.join(video_folder, base_name + ".SRT")
+
+        if not os.path.exists(srt_path):
+            print(f"❌ Skipping {video_file}: No matching SRT file found.")
+            continue
+
+        print(f"\n📂 Processing: {video_file}")
+
+        # Get FPS
+        cap = cv2.VideoCapture(video_path)
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        cap.release()
+
+        # 1. Parse GPS
+        gps_data = parse_srt_with_gps(srt_path)
+        if not gps_data:
+            print("❌ No GPS data found.")
+            continue
+        print(f"✅ GPS points: {len(gps_data)}")
+
+        # 2. Detect objects
+        detections = run_yolo_detection(video_path, model_path, fps, output_folder)
+        print(f"✅ Detections: {len(detections)}")
+
+        # 3. Match with GPS
+        for d in detections:
+            gps = find_nearest_gps(d["timestamp"], gps_data)
+            d["lat"] = gps["lat"]
+            d["lon"] = gps["lon"]
+
+        # 4. Save CSV
+        csv_path = os.path.join(output_folder, f"{base_name}_detections.csv")
+        save_to_csv(detections, csv_path)
+
+        # 5. Save Map
+        map_path = os.path.join(output_folder, f"{base_name}_map.html")
+        plot_on_map(detections, map_path)
+
 if __name__ == "__main__":
-    # File paths
-    srt_file = "/content/drive/My Drive/Drone_images_videos/20250701/small_video.SRT"
-    video_file = "/content/drive/My Drive/Drone_images_videos/20250701/small_video.MP4"
-    model_file = "/content/drive/My Drive/Yolo_results/garbage_detection/weights/best.pt"
+    # Configuration
+    video_folder = "/content/drive/My Drive/Drone_images_videos/20250701_videos"
+    model_file = "/content/drive/My Drive/Yolo_results/mosquito.v4i.yolov8/train25/weights/best.pt"
+    output_dir = "/content/drive/My Drive/Yolo_results/mosquito.v4i.yolov8/video_results"
 
-    # Frame rate (or auto-detect)
-    cap = cv2.VideoCapture(video_file)
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    cap.release()
-
-    # 1. Parse GPS from SRT
-    print("🔍 Parsing GPS data from SRT...")
-    gps_points = parse_srt_with_gps(srt_file)
-    print(f"✅ Loaded {len(gps_points)} GPS points.")
-
-    if not gps_points:
-        print("❌ No GPS data found. Check SRT file format.")
-        exit()
-
-    # 2. Detect objects
-    print("🤖 Running object detection...")
-    detections = run_yolo_detection(video_file, model_file, fps)
-    print(f"✅ Detected {len(detections)} objects.")
-
-    # 3. Match detections to GPS
-    print("🧭 Mapping detections to GPS coordinates...")
-    for d in detections:
-        gps = find_nearest_gps(d["timestamp"], gps_points)
-        d["lat"] = gps["lat"]
-        d["lon"] = gps["lon"]
-
-    # 4. Save results
-    save_to_csv(detections)
-
-    # 5. Visualize
-    plot_on_map(detections)
+    process_videos_in_folder(video_folder, model_file, output_dir)
 
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
