@@ -1,39 +1,22 @@
 {
   "vaultName": "MyPKM",
-  "lastExport": 1751945432190,
+  "lastExport": 1758173162117,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Robotic Sensors and Actuators/Kalman Filter - Part 1.md",
-    "Robotic Sensors and Actuators/Kalman Filter - Part 2.md",
-    "Robotic Sensors and Actuators/Kalman Filter - Part 3.md",
-    "Robotic Sensors and Actuators/Sensor Fusion Algorithm.md",
-    "Webots_Sensors/Sensor Fusion Algorithm 1.md",
-    "Webots_Sensors/Troubleshooting.md",
-    "Webots_Sensors/Tutorial 1 -First Simulation in Webots.md",
-    "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).md",
-    "Webots_Sensors/Tutorial 3 - Obstacle Avoidance.md",
-    "Webots_Sensors/Tutorial 4 - Odometry.md",
-    "Webots_Sensors/Tutorial 5 -Wall Following.md",
-    "Webots_Sensors/Tutorial 6 - Pit Escape.md",
-    "Webots_Sensors/Tutorial 7 - Complimentary Filter for Square Path Movement.md",
-    "Webots_Sensors/Tutorial 8 - Kalman Filter for Square Path Movement.md",
-    "Webots_Sensors/Webots Installation.md",
-    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.md",
-    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.md",
-    "YOLO_LabelStudio/Combine two datasets with different Categories.md",
-    "YOLO_LabelStudio/Extract Geo Tag Info.md",
-    "YOLO_LabelStudio/Google Colab and Machine Learning.md",
-    "YOLO_LabelStudio/Image Annotation.md",
-    "YOLO_LabelStudio/Installing Label Studio.md",
-    "Index.md",
+    "YOLO_LabelStudio/1 Installing Label Studio.md",
+    "YOLO_LabelStudio/2 Image Annotation.md",
+    "YOLO_LabelStudio/3 Check total label in Google Colab and training.md",
+    "index.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
     "lib/fonts/c8ba52b05a9ef10f4758.woff2",
     "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/293fd13dbca5a3e450ef.woff2",
+    "lib/fonts/085cb93e613ba3d40d2b.woff2",
     "lib/fonts/b5f0f109bc88052d4000.woff2",
     "lib/fonts/cbe0ae49c52c920fd563.woff2",
     "lib/fonts/535a6cf662596b3bd6a6.woff2",
@@ -42,29 +25,7 @@
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/6155340132a851f6089e.svg",
-    "lib/fonts/MathJax_Zero.woff",
-    "lib/fonts/MathJax_Main-Regular.woff",
-    "lib/fonts/MathJax_Main-Bold.woff",
-    "lib/fonts/MathJax_Math-Italic.woff",
-    "lib/fonts/MathJax_Main-Italic.woff",
-    "lib/fonts/MathJax_Math-BoldItalic.woff",
-    "lib/fonts/MathJax_Size1-Regular.woff",
-    "lib/fonts/MathJax_Size2-Regular.woff",
-    "lib/fonts/MathJax_Size3-Regular.woff",
-    "lib/fonts/MathJax_Size4-Regular.woff",
-    "lib/fonts/MathJax_AMS-Regular.woff",
-    "lib/fonts/MathJax_Calligraphic-Regular.woff",
-    "lib/fonts/MathJax_Calligraphic-Bold.woff",
-    "lib/fonts/MathJax_Fraktur-Regular.woff",
-    "lib/fonts/MathJax_Fraktur-Bold.woff",
-    "lib/fonts/MathJax_SansSerif-Regular.woff",
-    "lib/fonts/MathJax_SansSerif-Bold.woff",
-    "lib/fonts/MathJax_SansSerif-Italic.woff",
-    "lib/fonts/MathJax_Script-Regular.woff",
-    "lib/fonts/MathJax_Typewriter-Regular.woff",
-    "lib/fonts/MathJax_Vector-Regular.woff",
-    "lib/fonts/MathJax_Vector-Bold.woff"
+    "lib/media/6155340132a851f6089e.svg"
   ],
   "mainDependencies": [
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -72,6 +33,8 @@
     "lib/fonts/2d5198822ab091ce4305.woff2",
     "lib/fonts/c8ba52b05a9ef10f4758.woff2",
     "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/293fd13dbca5a3e450ef.woff2",
+    "lib/fonts/085cb93e613ba3d40d2b.woff2",
     "lib/fonts/b5f0f109bc88052d4000.woff2",
     "lib/fonts/cbe0ae49c52c920fd563.woff2",
     "lib/fonts/535a6cf662596b3bd6a6.woff2",
@@ -80,167 +43,91 @@
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/6155340132a851f6089e.svg",
-    "lib/fonts/MathJax_Zero.woff",
-    "lib/fonts/MathJax_Main-Regular.woff",
-    "lib/fonts/MathJax_Main-Bold.woff",
-    "lib/fonts/MathJax_Math-Italic.woff",
-    "lib/fonts/MathJax_Main-Italic.woff",
-    "lib/fonts/MathJax_Math-BoldItalic.woff",
-    "lib/fonts/MathJax_Size1-Regular.woff",
-    "lib/fonts/MathJax_Size2-Regular.woff",
-    "lib/fonts/MathJax_Size3-Regular.woff",
-    "lib/fonts/MathJax_Size4-Regular.woff",
-    "lib/fonts/MathJax_AMS-Regular.woff",
-    "lib/fonts/MathJax_Calligraphic-Regular.woff",
-    "lib/fonts/MathJax_Calligraphic-Bold.woff",
-    "lib/fonts/MathJax_Fraktur-Regular.woff",
-    "lib/fonts/MathJax_Fraktur-Bold.woff",
-    "lib/fonts/MathJax_SansSerif-Regular.woff",
-    "lib/fonts/MathJax_SansSerif-Bold.woff",
-    "lib/fonts/MathJax_SansSerif-Italic.woff",
-    "lib/fonts/MathJax_Script-Regular.woff",
-    "lib/fonts/MathJax_Typewriter-Regular.woff",
-    "lib/fonts/MathJax_Vector-Regular.woff",
-    "lib/fonts/MathJax_Vector-Bold.woff"
+    "lib/media/6155340132a851f6089e.svg"
   ],
   "fileInfo": {
-    "Webots_Sensors/Tutorial 1 -First Simulation in Webots.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 5705,
-      "exportedPath": "Webots_Sensors/Tutorial 1 -First Simulation in Webots.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Webots Installation.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 233,
-      "exportedPath": "Webots_Sensors/Webots Installation.html",
-      "dependencies": []
-    },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1758173162117,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
-      "dependencies": []
-    },
-    "Index.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 780,
-      "exportedPath": "Index.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Troubleshooting.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 150,
-      "exportedPath": "Webots_Sensors/Troubleshooting.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 2225,
-      "exportedPath": "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 3 - Obstacle Avoidance.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 3268,
-      "exportedPath": "Webots_Sensors/Tutorial 3 - Obstacle Avoidance.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 4 - Odometry.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1156,
-      "exportedPath": "Webots_Sensors/Tutorial 4 - Odometry.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 5 -Wall Following.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 4415,
-      "exportedPath": "Webots_Sensors/Tutorial 5 -Wall Following.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 6 - Pit Escape.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1008,
-      "exportedPath": "Webots_Sensors/Tutorial 6 - Pit Escape.html",
       "dependencies": []
     },
     "lib/fonts/MathJax_Zero.woff": {
@@ -375,88 +262,40 @@
       "exportedPath": "lib/fonts/MathJax_Vector-Bold.woff",
       "dependencies": []
     },
-    "YOLO_LabelStudio/Image Annotation.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 4240,
-      "exportedPath": "YOLO_LabelStudio/Image Annotation.html",
-      "dependencies": []
-    },
-    "YOLO_LabelStudio/Installing Label Studio.md": {
-      "modifiedTime": 1751945432190,
+    "YOLO_LabelStudio/1 Installing Label Studio.md": {
+      "modifiedTime": 1758173162117,
       "sourceSize": 659,
-      "exportedPath": "YOLO_LabelStudio/Installing Label Studio.html",
+      "exportedPath": "YOLO_LabelStudio/1 Installing Label Studio.html",
       "dependencies": []
     },
-    "YOLO_LabelStudio/Combine two datasets with different Categories.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1900,
-      "exportedPath": "YOLO_LabelStudio/Combine two datasets with different Categories.html",
+    "YOLO_LabelStudio/2 Image Annotation.md": {
+      "modifiedTime": 1758173162117,
+      "sourceSize": 7278,
+      "exportedPath": "YOLO_LabelStudio/2 Image Annotation.html",
       "dependencies": []
     },
-    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1657,
-      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.html",
+    "YOLO_LabelStudio/3 Check total label in Google Colab and training.md": {
+      "modifiedTime": 1758173162117,
+      "sourceSize": 6061,
+      "exportedPath": "YOLO_LabelStudio/3 Check total label in Google Colab and training.html",
       "dependencies": []
     },
-    "Webots_Sensors/Sensor Fusion Algorithm 1.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 9774,
-      "exportedPath": "Webots_Sensors/Sensor Fusion Algorithm 1.html",
+    "index.md": {
+      "modifiedTime": 1758173162117,
+      "sourceSize": 107,
+      "exportedPath": "index.html",
       "dependencies": []
     },
-    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1902,
-      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.html",
+    "lib/fonts/293fd13dbca5a3e450ef.woff2": {
+      "modifiedTime": 1758173162117,
+      "sourceSize": 105924,
+      "exportedPath": "lib/fonts/293fd13dbca5a3e450ef.woff2",
       "dependencies": []
     },
-    "YOLO_LabelStudio/Google Colab and Machine Learning.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 11430,
-      "exportedPath": "YOLO_LabelStudio/Google Colab and Machine Learning.html",
-      "dependencies": []
-    },
-    "Robotic Sensors and Actuators/Kalman Filter - Part 1.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 8044,
-      "exportedPath": "Robotic Sensors and Actuators/Kalman Filter - Part 1.html",
-      "dependencies": []
-    },
-    "Robotic Sensors and Actuators/Kalman Filter - Part 2.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 7384,
-      "exportedPath": "Robotic Sensors and Actuators/Kalman Filter - Part 2.html",
-      "dependencies": []
-    },
-    "Robotic Sensors and Actuators/Kalman Filter - Part 3.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 2177,
-      "exportedPath": "Robotic Sensors and Actuators/Kalman Filter - Part 3.html",
-      "dependencies": []
-    },
-    "Robotic Sensors and Actuators/Sensor Fusion Algorithm.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 9774,
-      "exportedPath": "Robotic Sensors and Actuators/Sensor Fusion Algorithm.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 7 - Complimentary Filter for Square Path Movement.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1594,
-      "exportedPath": "Webots_Sensors/Tutorial 7 - Complimentary Filter for Square Path Movement.html",
-      "dependencies": []
-    },
-    "Webots_Sensors/Tutorial 8 - Kalman Filter for Square Path Movement.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 0,
-      "exportedPath": "Webots_Sensors/Tutorial 8 - Kalman Filter for Square Path Movement.html",
-      "dependencies": []
-    },
-    "YOLO_LabelStudio/Extract Geo Tag Info.md": {
-      "modifiedTime": 1751945432190,
-      "sourceSize": 1756,
-      "exportedPath": "YOLO_LabelStudio/Extract Geo Tag Info.html",
+    "lib/fonts/085cb93e613ba3d40d2b.woff2": {
+      "modifiedTime": 1758173162117,
+      "sourceSize": 112184,
+      "exportedPath": "lib/fonts/085cb93e613ba3d40d2b.woff2",
       "dependencies": []
     }
   }
