@@ -1,49 +1,95 @@
 {
   "vaultName": "MyPKM",
-  "lastExport": 1758173162117,
+  "lastExport": 1778134460875,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
+    "Webots_Sensors/Tutorial 1 - First Simulation in Webots.md",
+    "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).md",
+    "Webots_Sensors/Tutorial 3 - Line following.md",
+    "Webots_Sensors/Tutorial 4 - Obstacle Avoidance.md",
+    "Webots_Sensors/Tutorial 5 - Odometry.md",
+    "Webots_Sensors/Tutorial 6 - Wall Following.md",
+    "Webots_Sensors/Tutorial 8 - Pit Escape.md",
+    "Webots_Sensors/Webots Installation.md",
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.md",
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert YOLO to Json Label Studio.md",
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/covert.py",
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/merge_.py",
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.md",
     "YOLO_LabelStudio/1 Installing Label Studio.md",
     "YOLO_LabelStudio/2 Image Annotation.md",
     "YOLO_LabelStudio/3 Check total label in Google Colab and training.md",
+    "YOLO_LabelStudio/Combine two datasets with different Categories.md",
+    "YOLO_LabelStudio/Extract Geo Tag Info.md",
+    "YOLO_LabelStudio/Google Colab and Machine Learning.md",
+    "YOLO_LabelStudio/Merge two YOLO Project Folder to One YOLO Project.md",
+    "YOLO_LabelStudio/Reference.md",
     "index.md",
-    "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/72505e6a122c6acd5471.woff2",
-    "lib/fonts/2d5198822ab091ce4305.woff2",
-    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
-    "lib/fonts/cb10ffd7684cd9836a05.woff2",
-    "lib/fonts/293fd13dbca5a3e450ef.woff2",
-    "lib/fonts/085cb93e613ba3d40d2b.woff2",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
-    "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/6155340132a851f6089e.svg"
+    "lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2",
+    "lib/media/6155340132a851f6089e.svg",
+    "lib/fonts/MathJax_Zero.woff",
+    "lib/fonts/MathJax_Main-Regular.woff",
+    "lib/fonts/MathJax_Main-Bold.woff",
+    "lib/fonts/MathJax_Math-Italic.woff",
+    "lib/fonts/MathJax_Main-Italic.woff",
+    "lib/fonts/MathJax_Math-BoldItalic.woff",
+    "lib/fonts/MathJax_Size1-Regular.woff",
+    "lib/fonts/MathJax_Size2-Regular.woff",
+    "lib/fonts/MathJax_Size3-Regular.woff",
+    "lib/fonts/MathJax_Size4-Regular.woff",
+    "lib/fonts/MathJax_AMS-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Bold.woff",
+    "lib/fonts/MathJax_Fraktur-Regular.woff",
+    "lib/fonts/MathJax_Fraktur-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Regular.woff",
+    "lib/fonts/MathJax_SansSerif-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Italic.woff",
+    "lib/fonts/MathJax_Script-Regular.woff",
+    "lib/fonts/MathJax_Typewriter-Regular.woff",
+    "lib/fonts/MathJax_Vector-Regular.woff",
+    "lib/fonts/MathJax_Vector-Bold.woff"
   ],
   "mainDependencies": [
-    "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/72505e6a122c6acd5471.woff2",
-    "lib/fonts/2d5198822ab091ce4305.woff2",
-    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
-    "lib/fonts/cb10ffd7684cd9836a05.woff2",
-    "lib/fonts/293fd13dbca5a3e450ef.woff2",
-    "lib/fonts/085cb93e613ba3d40d2b.woff2",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
-    "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/6155340132a851f6089e.svg"
+    "lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2",
+    "lib/media/6155340132a851f6089e.svg",
+    "lib/fonts/MathJax_Zero.woff",
+    "lib/fonts/MathJax_Main-Regular.woff",
+    "lib/fonts/MathJax_Main-Bold.woff",
+    "lib/fonts/MathJax_Math-Italic.woff",
+    "lib/fonts/MathJax_Main-Italic.woff",
+    "lib/fonts/MathJax_Math-BoldItalic.woff",
+    "lib/fonts/MathJax_Size1-Regular.woff",
+    "lib/fonts/MathJax_Size2-Regular.woff",
+    "lib/fonts/MathJax_Size3-Regular.woff",
+    "lib/fonts/MathJax_Size4-Regular.woff",
+    "lib/fonts/MathJax_AMS-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Regular.woff",
+    "lib/fonts/MathJax_Calligraphic-Bold.woff",
+    "lib/fonts/MathJax_Fraktur-Regular.woff",
+    "lib/fonts/MathJax_Fraktur-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Regular.woff",
+    "lib/fonts/MathJax_SansSerif-Bold.woff",
+    "lib/fonts/MathJax_SansSerif-Italic.woff",
+    "lib/fonts/MathJax_Script-Regular.woff",
+    "lib/fonts/MathJax_Typewriter-Regular.woff",
+    "lib/fonts/MathJax_Vector-Regular.woff",
+    "lib/fonts/MathJax_Vector-Bold.woff"
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
@@ -95,194 +141,194 @@
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/fonts/MathJax_Zero.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 1368,
       "exportedPath": "lib/fonts/MathJax_Zero.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Main-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 34160,
       "exportedPath": "lib/fonts/MathJax_Main-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Main-Bold.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 34464,
       "exportedPath": "lib/fonts/MathJax_Main-Bold.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Math-Italic.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 19360,
       "exportedPath": "lib/fonts/MathJax_Math-Italic.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Main-Italic.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 20832,
       "exportedPath": "lib/fonts/MathJax_Main-Italic.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Math-BoldItalic.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 19776,
       "exportedPath": "lib/fonts/MathJax_Math-BoldItalic.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Size1-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 5792,
       "exportedPath": "lib/fonts/MathJax_Size1-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Size2-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 5464,
       "exportedPath": "lib/fonts/MathJax_Size2-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Size3-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 3244,
       "exportedPath": "lib/fonts/MathJax_Size3-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Size4-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 5148,
       "exportedPath": "lib/fonts/MathJax_Size4-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_AMS-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 40808,
       "exportedPath": "lib/fonts/MathJax_AMS-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Calligraphic-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 9600,
       "exportedPath": "lib/fonts/MathJax_Calligraphic-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Calligraphic-Bold.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 9908,
       "exportedPath": "lib/fonts/MathJax_Calligraphic-Bold.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Fraktur-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 21480,
       "exportedPath": "lib/fonts/MathJax_Fraktur-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Fraktur-Bold.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 22340,
       "exportedPath": "lib/fonts/MathJax_Fraktur-Bold.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_SansSerif-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 12660,
       "exportedPath": "lib/fonts/MathJax_SansSerif-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_SansSerif-Bold.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 15944,
       "exportedPath": "lib/fonts/MathJax_SansSerif-Bold.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_SansSerif-Italic.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 14628,
       "exportedPath": "lib/fonts/MathJax_SansSerif-Italic.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Script-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 11852,
       "exportedPath": "lib/fonts/MathJax_Script-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Typewriter-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 17604,
       "exportedPath": "lib/fonts/MathJax_Typewriter-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Vector-Regular.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 1136,
       "exportedPath": "lib/fonts/MathJax_Vector-Regular.woff",
       "dependencies": []
     },
     "lib/fonts/MathJax_Vector-Bold.woff": {
-      "modifiedTime": 1751945432190,
+      "modifiedTime": 1778134460875,
       "sourceSize": 1116,
       "exportedPath": "lib/fonts/MathJax_Vector-Bold.woff",
       "dependencies": []
     },
     "YOLO_LabelStudio/1 Installing Label Studio.md": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 659,
       "exportedPath": "YOLO_LabelStudio/1 Installing Label Studio.html",
       "dependencies": []
     },
     "YOLO_LabelStudio/2 Image Annotation.md": {
-      "modifiedTime": 1758173162117,
-      "sourceSize": 7278,
+      "modifiedTime": 1778134460875,
+      "sourceSize": 7338,
       "exportedPath": "YOLO_LabelStudio/2 Image Annotation.html",
       "dependencies": []
     },
     "YOLO_LabelStudio/3 Check total label in Google Colab and training.md": {
-      "modifiedTime": 1758173162117,
+      "modifiedTime": 1778134460875,
       "sourceSize": 6061,
       "exportedPath": "YOLO_LabelStudio/3 Check total label in Google Colab and training.html",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1758173162117,
-      "sourceSize": 107,
+      "modifiedTime": 1778134460875,
+      "sourceSize": 963,
       "exportedPath": "index.html",
       "dependencies": []
     },
@@ -296,6 +342,126 @@
       "modifiedTime": 1758173162117,
       "sourceSize": 112184,
       "exportedPath": "lib/fonts/085cb93e613ba3d40d2b.woff2",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 1 - First Simulation in Webots.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 5786,
+      "exportedPath": "Webots_Sensors/Tutorial 1 - First Simulation in Webots.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 2292,
+      "exportedPath": "Webots_Sensors/Tutorial 2 - Using Wheel Encoder for Square Path Movement (sensor-based control).html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 3 - Line following.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1269,
+      "exportedPath": "Webots_Sensors/Tutorial 3 - Line following.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 4 - Obstacle Avoidance.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 3286,
+      "exportedPath": "Webots_Sensors/Tutorial 4 - Obstacle Avoidance.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 5 - Odometry.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1156,
+      "exportedPath": "Webots_Sensors/Tutorial 5 - Odometry.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 6 - Wall Following.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 4441,
+      "exportedPath": "Webots_Sensors/Tutorial 6 - Wall Following.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Tutorial 8 - Pit Escape.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1031,
+      "exportedPath": "Webots_Sensors/Tutorial 8 - Pit Escape.html",
+      "dependencies": []
+    },
+    "Webots_Sensors/Webots Installation.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 625,
+      "exportedPath": "Webots_Sensors/Webots Installation.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1902,
+      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert to Label Studio from RobotFlow.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert YOLO to Json Label Studio.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 2370,
+      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Convert YOLO to Json Label Studio.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/covert.py": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1959,
+      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/covert.py",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/merge_.py": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1711,
+      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/merge_.py",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1657,
+      "exportedPath": "YOLO_LabelStudio/Convert_RobotFlow_To_LabelStudio and merger/Merger two Datasets.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Combine two datasets with different Categories.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1900,
+      "exportedPath": "YOLO_LabelStudio/Combine two datasets with different Categories.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Extract Geo Tag Info.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 1756,
+      "exportedPath": "YOLO_LabelStudio/Extract Geo Tag Info.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Google Colab and Machine Learning.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 11430,
+      "exportedPath": "YOLO_LabelStudio/Google Colab and Machine Learning.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Merge two YOLO Project Folder to One YOLO Project.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 3586,
+      "exportedPath": "YOLO_LabelStudio/Merge two YOLO Project Folder to One YOLO Project.html",
+      "dependencies": []
+    },
+    "YOLO_LabelStudio/Reference.md": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 330,
+      "exportedPath": "YOLO_LabelStudio/Reference.html",
+      "dependencies": []
+    },
+    "lib/fonts/c504db5c06caaf7cdfba.woff2": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 352240,
+      "exportedPath": "lib/fonts/c504db5c06caaf7cdfba.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2": {
+      "modifiedTime": 1778134460875,
+      "sourceSize": 387976,
+      "exportedPath": "lib/fonts/01dcbad1bac635f9c9cd.woff2",
       "dependencies": []
     }
   }
